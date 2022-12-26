@@ -1,0 +1,29 @@
+.commentHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .ownIndicator {
+    background-color: var(--moderate-blue);
+    padding: 2px 4px;
+    color: var(--white);
+    font-size: 12px;
+  }
+
+  .userImage {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+  }
+
+  .username {
+    color: var(--dark-blue);
+    font-weight: 500;
+  }
+
+  .actionButtons {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+}
