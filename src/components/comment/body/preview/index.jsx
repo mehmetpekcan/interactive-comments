@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./styles.module.scss";
 
-function Preview({ replyingTo, content }) {
+import { useComment } from "../../useComment";
+
+function Preview() {
+  const {
+    comment: { replyingTo, content },
+  } = useComment();
+
   return (
     <p>
       {!!replyingTo && (

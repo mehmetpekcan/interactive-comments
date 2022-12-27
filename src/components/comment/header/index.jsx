@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { Button } from "../../button";
+import { useComment } from "../useComment";
 
-function Header({
-  ownByCurrentUser,
-  user,
-  createdAt,
-  onReply,
-  onDelete,
-  onEdit,
-}) {
+function Header() {
+  const {
+    onEdit,
+    onReply,
+    onDelete,
+    ownByCurrentUser,
+    comment: { user, createdAt },
+  } = useComment();
+
   return (
     <div className={styles.commentHeader}>
       <img

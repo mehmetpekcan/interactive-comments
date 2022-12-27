@@ -1,6 +1,7 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import styles from "./styles.module.scss";
 
+import { useComment } from "../useComment";
 import { Edit } from "./edit";
 import { Preview } from "./preview";
 
@@ -11,12 +12,13 @@ const Modes = {
   [PREVIEW_MODE]: Preview,
 };
 
-function Body({ mode, replyingTo, content }) {
+function Body() {
+  const { mode } = useComment();
   const CurrentMode = Modes[mode];
 
   return (
     <div className={styles.commentText}>
-      <CurrentMode replyingTo={replyingTo} content={content} />
+      <CurrentMode />
     </div>
   );
 }
